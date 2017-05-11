@@ -2,92 +2,106 @@
   "nodes": [
     {
       "id": 1,
-      "name": "A"
+      "name": "A",
+      "r": 1
     },
     {
       "id": 2,
-      "name": "B"
+      "name": "B",
+      "r": 2
     },
     {
       "id": 3,
-      "name": "C"
+      "name": "C",
+      "r": 1
     },
     {
       "id": 4,
-      "name": "D"
+      "name": "D",
+      "r": 2
     },
     {
       "id": 5,
-      "name": "E"
+      "name": "E",
+      "r": 1
     },
     {
       "id": 6,
-      "name": "F"
+      "name": "F",
+      "r": 2
     },
     {
       "id": 7,
-      "name": "G"
+      "name": "G",
+      "r": 1
     },
     {
       "id": 8,
-      "name": "H"
+      "name": "H",
+      "r": 2
     },
     {
       "id": 9,
-      "name": "I"
+      "name": "I",
+      "r": 1
     },
     {
       "id": 10,
-      "name": "J"
+      "name": "J",
+      "r": 2
     }
   ],
   "links": [
 
     {
       "source_id": 1,
-      "target_id": 2
+      "target_id": 2,
+      "weight": 2
     },
     {
       "source_id": 1,
-      "target_id": 5
+      "target_id": 5,
+      "weight": 1
     },
     {
       "source_id": 1,
-      "target_id": 6
-    },
-
-    {
-      "source_id": 2,
-      "target_id": 3
+      "target_id": 6,
+      "weight": 2
     },
     {
       "source_id": 2,
-      "target_id": 7
-    }
-  ,
-
+      "target_id": 3,
+      "weight": 1
+    },
+    {
+      "source_id": 2,
+      "target_id": 7,
+      "weight": 2
+    },
     {
       "source_id": 3,
-      "target_id": 4
+      "target_id": 4,
+      "weight": 1
     },
     {
       "source_id": 8,
-      "target_id": 3
-    }
-  ,
+      "target_id": 3,
+      "weight": 2
+    },
     {
       "source_id": 4,
-      "target_id": 5
-    }
-  ,
-
+      "target_id": 5,
+      "weight": 1
+    },
     {
       "source_id": 4,
-      "target_id": 9
+      "target_id": 9,
+      "weight": 2
     },
     {
       "source_id": 5,
-      "target_id": 10
+      "target_id": 10,
+      "weight": 1
     }
   ]
 }
