@@ -5,7 +5,6 @@ function chart() {
         nodeSizeMultiplier = 10,
         linkSize = "weight",
         linkSizeMultiplier = 1.5,
-        linkStrengthMultiplier = 100,
         nodeAttraction = -4;
 
     function my(selection) {
@@ -13,11 +12,11 @@ function chart() {
         selection.each(function(data) {
 
             var simulation = d3.forceSimulation()
-                .force("link", d3.forceLink().id(function (d) {
-                    return d.id;
-                }))
-                .force("linkStrength",  function(d) { return d[linkSize] * linkStrengthMultiplier; } )
-                .force("charge", d3.forceManyBody().strength(nodeAttraction * 100))
+                .force("link", d3.forceLink()
+                    .id(function(d) {
+                        return d.id;
+                    }))
+                .force("charge", d3.forceManyBody())//.strength(nodeAttraction * 100))
                 .force("center", d3.forceCenter(width / 2, height / 2));
 
             var svg = d3.select(this).selectAll("svg").data([data]);
@@ -73,8 +72,7 @@ function chart() {
 
             function ticked() {
                 simulation
-                    .force("charge", d3.forceManyBody().strength(nodeAttraction * 100))
-                    .force("linkStrength",  function(d) { return d[linkSize] * linkStrengthMultiplier; } );
+                    .force("charge", d3.forceManyBody().strength(nodeAttraction * 100));
 
                 link
                     .attr("x1", function(d) { return d.source.x; })
@@ -137,12 +135,6 @@ function chart() {
     my.linkSizeMultiplier = function(value) {
         if (!arguments.length) return linkSizeMultiplier;
         linkSizeMultiplier = value;
-        return my;
-    };
-
-    my.linkStrengthMultiplier = function(value) {
-        if (!arguments.length) return linkStrengthMultiplier;
-        linkStrengthMultiplier = value;
         return my;
     };
 
