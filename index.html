@@ -18,7 +18,24 @@
 </head>
 <body>
 
+  <h1> Iman's rendition of Nick's assignment </h1>
+
 <div id="chart"></div>
 
 </body>
+
+<script>
+    d3.json("data/data.json", function(error, graph) {
+        if (error) throw error;
+
+        var myChart = chart();
+        var chartWrapper = d3.select('#chart')
+            .datum(graph)
+            .call(myChart);
+
+//        myChart.linkSizeMultiplier(3).nodeAttraction(-15);
+//        chartWrapper.call(myChart);
+    });
+</script>
+
 </html>
